@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Смородина — ягодный чай</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F2F0;
+    --paper-warm:#E7E0DB;
+    --ink:#231C22;
+    --ink-soft:#615762;
+    --currant:#2E1533;
+    --rosehip:#C4562A;
+    --aronia:#472447;
+    --apple:#8C9E44;
+    --rowan:#A6472F;
+    --thyme:#6E7D4A;
+    --line:#DCD3D8;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Karla",system-ui,sans-serif;
+    font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 28px}
+
+  .hero{padding:72px 0 40px}
+  .kicker{font-size:15px;color:var(--ink-soft);margin:0 0 18px}
+
+  h1{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40,"WONK" 1;
+    font-weight:500;
+    font-size:clamp(2.9rem,11vw,6.6rem);
+    line-height:.92;letter-spacing:-.03em;
+    margin:0;color:var(--currant);
+  }
+
+  .lede{max-width:52ch;font-size:19px;margin:26px 0 0}
+  .lede + .lede{margin-top:12px;color:var(--ink-soft);font-size:17px}
+
+  .band{display:flex;height:76px;margin:48px 0 10px;border-radius:4px;overflow:hidden}
+  .band span{display:block;transform-origin:left center;animation:grow .9s cubic-bezier(.2,.7,.3,1) both}
+  .band span:nth-child(1){background:var(--currant);flex:3;animation-delay:.05s}
+  .band span:nth-child(2){background:var(--rosehip);flex:1.8;animation-delay:.1s}
+  .band span:nth-child(3){background:var(--aronia);flex:1.9;animation-delay:.15s}
+  .band span:nth-child(4){background:var(--apple);flex:1.1;animation-delay:.2s}
+  .band span:nth-child(5){background:var(--rowan);flex:1.4;animation-delay:.25s}
+  .band span:nth-child(6){background:var(--thyme);flex:.9;animation-delay:.3s}
+
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+  .band-note{font-size:14px;color:var(--ink-soft);margin:0 0 4px}
+
+  section{padding:56px 0}
+
+  h2{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40;
+    font-weight:500;
+    font-size:clamp(1.9rem,4.5vw,2.6rem);
+    line-height:1.1;letter-spacing:-.02em;margin:0 0 28px;
+  }
+
+  .rule{height:1px;background:var(--line);border:0;margin:0}
+
+  .parts{list-style:none;margin:0;padding:0}
+  .parts li{display:grid;grid-template-columns:14px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
+  .parts li:last-child{border-bottom:1px solid var(--line)}
+  .dot{width:14px;height:14px;border-radius:50%;margin-top:9px;flex-shrink:0}
+  .parts h3{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40;
+    font-weight:500;font-size:21px;margin:0 0 4px;letter-spacing:-.01em;
+  }
+  .parts p{margin:0;max-width:56ch;color:var(--ink-soft)}
+
+  /* ---------- Для чего хороша ---------- */
+
+  .good{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+  .good li{
+    background:var(--paper-warm);
+    padding:20px 24px;
+    font-size:17px;
+  }
+  .good li::before{
+    content:"";
+    display:inline-block;
+    width:8px;height:8px;
+    border-radius:50%;
+    background:var(--currant);
+    margin-right:14px;
+    vertical-align:middle;
+  }
+
+  /* ---------- Заваривание ---------- */
+
+  .brew{background:var(--paper-warm);border-radius:6px;padding:38px 34px}
+  .for{font-size:15px;color:var(--ink-soft);margin:0 0 20px}
+
+  .specs{display:flex;flex-wrap:wrap;gap:34px 56px;margin:0;padding:0}
+  .specs div{min-width:120px}
+  .specs dt{font-size:14px;color:var(--ink-soft);margin-bottom:2px}
+  .specs dd{
+    margin:0;
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40;
+    font-weight:500;
+    font-size:clamp(2rem,6vw,2.8rem);
+    line-height:1.05;letter-spacing:-.02em;
+    color:var(--currant);
+  }
+  .specs dd small{
+    font-family:"Karla",sans-serif;font-weight:400;font-size:16px;
+    letter-spacing:0;color:var(--ink-soft);margin-left:4px;
+  }
+
+  .start{margin:32px 0 0;padding-top:22px;border-top:1px solid var(--line);font-size:18px}
+  .start b{font-weight:600}
+  .why{margin:16px 0 0;max-width:58ch;color:var(--ink-soft);font-size:16px}
+
+  .cold .brew{background:#E9E3DF}
+  .cold .specs dd{color:var(--rowan)}
+
+  footer{padding:44px 0 72px;color:var(--ink-soft);font-size:15px}
+  footer p{margin:0;max-width:56ch}
+
+  :focus-visible{outline:2px solid var(--currant);outline-offset:3px}
+
+  @media (max-width:560px){
+    .hero{padding:48px 0 28px}
+    .brew{padding:28px 22px}
+    .specs{gap:26px 36px}
+    .band{height:56px}
+    .good li{padding:16px 18px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .band span{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Ягодный чай для ежедневного питья</p>
+    <h1>Смородина</h1>
+    <p class="lede">Чёрная смородина, шиповник, арония, зелёное яблоко, рябина обыкновенная и чабрец.</p>
+    <p class="lede">Профиль смеси — ягодный, кислый и ароматный, а чабрец добавляет пряную ноту.</p>
+
+    <div class="band" role="img" aria-label="Полоса цветов: чёрная смородина, шиповник, арония, зелёное яблоко, рябина обыкновенная, чабрец">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <p class="band-note">Ширина полос — примерная роль каждого компонента во вкусе.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Что даёт каждый компонент</h2>
+    <ul class="parts">
+      <li>
+        <span class="dot" style="background:var(--currant)"></span>
+        <div>
+          <h3>Чёрная смородина</h3>
+          <p>Антоцианы, витамин C и другие полифенолы. Один из наиболее ценных компонентов смеси с точки зрения фитонутриентов.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--rosehip)"></span>
+        <div>
+          <h3>Шиповник</h3>
+          <p>Витамин C, каротиноиды и полифенолы.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--aronia)"></span>
+        <div>
+          <h3>Арония</h3>
+          <p>Очень богата антоцианами и проантоцианидинами; именно она даст выраженную терпкость.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--apple)"></span>
+        <div>
+          <h3>Зелёное яблоко</h3>
+          <p>Органические кислоты, пектин и полифенолы; в основном улучшает вкус и балансирует ягоды.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--rowan)"></span>
+        <div>
+          <h3>Рябина обыкновенная</h3>
+          <p>Полифенолы, каротиноиды и органические кислоты; добавляет характерную терпкость.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--thyme)"></span>
+        <div>
+          <h3>Чабрец</h3>
+          <p>Эфирные масла, прежде всего тимол и карвакрол; отвечает за пряный аромат.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section>
+  <div class="wrap">
+    <h2>Для чего такая смесь хороша</h2>
+    <p class="lede" style="margin-bottom:24px">В первую очередь это безкофеиновый ягодный напиток с высоким содержанием полифенолов. Потенциально он:</p>
+    <ul class="good">
+      <li>поддерживает поступление антиоксидантных растительных соединений</li>
+      <li>является хорошим источником ягодных антоцианов</li>
+      <li>может быть приятной альтернативой обычному чаю</li>
+      <li>благодаря чабрецу обладает выраженным ароматом и согревающим вкусом</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Вариант для ежедневного питья</h2>
+    <div class="brew">
+      <p class="for">На 500 мл</p>
+      <dl class="specs">
+        <div><dt>Смеси</dt><dd>7–9<small>г</small></dd></div>
+        <div><dt>Вода</dt><dd>90–95<small>°C</small></dd></div>
+        <div><dt>Под крышкой</dt><dd>10–12<small>мин</small></dd></div>
+      </dl>
+      <p class="start">Для более насыщенного ягодного вкуса — <b>10 г на 500 мл и 15 минут</b>.</p>
+      <p class="why">Не стоит настаивать 20–30 минут: это не даст особых преимуществ, зато увеличит терпкость от аронии и рябины и ухудшит сохранность витамина C.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cold">
+  <div class="wrap">
+    <h2>Интересный вариант — холодный настой</h2>
+    <div class="brew">
+      <p class="for">На 500 мл холодной воды</p>
+      <dl class="specs">
+        <div><dt>Смеси</dt><dd>8–10<small>г</small></dd></div>
+        <div><dt>В холодильнике</dt><dd>8–12<small>ч</small></dd></div>
+      </dl>
+      <p class="why">Получится мягче, менее терпко, и очень хорошо раскроются кислоты и ароматические компоненты.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Пряная нота чабреца отличает эту смесь от остальных в линейке — она греет даже в холодном виде.</p>
+  </div>
+</footer>
+
+</body>
+</html>
