@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Земляника — ягодный чай</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FCF5F2;
+    --paper-warm:#F6E9E4;
+    --ink:#33202A;
+    --ink-soft:#6B5560;
+    --hibiscus:#C0243F;
+    --strawberry:#E0566A;
+    --aronia:#4B2246;
+    --apple:#8C9E44;
+    --leaf:#5E7A50;
+    --line:#E3D2CC;
+  }
+
+  *{box-sizing:border-box}
+
+  html{scroll-behavior:smooth}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Karla",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:880px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero{padding:72px 0 40px}
+
+  .kicker{
+    font-size:15px;
+    color:var(--ink-soft);
+    letter-spacing:.01em;
+    margin:0 0 18px;
+  }
+
+  h1{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40,"WONK" 1;
+    font-weight:500;
+    font-size:clamp(3.6rem,13vw,7.5rem);
+    line-height:.92;
+    letter-spacing:-.03em;
+    margin:0;
+    color:var(--hibiscus);
+  }
+
+  .lede{
+    max-width:52ch;
+    font-size:19px;
+    margin:26px 0 0;
+    color:var(--ink);
+  }
+
+  .lede + .lede{
+    margin-top:12px;
+    color:var(--ink-soft);
+    font-size:17px;
+  }
+
+  /* ---------- Полоса состава ---------- */
+
+  .band{
+    display:flex;
+    height:76px;
+    margin:48px 0 10px;
+    border-radius:4px;
+    overflow:hidden;
+  }
+
+  .band span{
+    display:block;
+    transform-origin:left center;
+    animation:grow .9s cubic-bezier(.2,.7,.3,1) both;
+  }
+
+  .band span:nth-child(1){background:var(--strawberry);flex:3;animation-delay:.05s}
+  .band span:nth-child(2){background:var(--hibiscus);flex:3;animation-delay:.12s}
+  .band span:nth-child(3){background:var(--leaf);flex:1.2;animation-delay:.19s}
+  .band span:nth-child(4){background:var(--aronia);flex:2;animation-delay:.26s}
+  .band span:nth-child(5){background:var(--apple);flex:1.6;animation-delay:.33s}
+
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+  .band-note{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin:0 0 4px;
+  }
+
+  /* ---------- Секции ---------- */
+
+  section{padding:56px 0}
+
+  h2{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40;
+    font-weight:500;
+    font-size:clamp(1.9rem,4.5vw,2.6rem);
+    line-height:1.1;
+    letter-spacing:-.02em;
+    margin:0 0 28px;
+  }
+
+  .rule{
+    height:1px;
+    background:var(--line);
+    border:0;
+    margin:0;
+  }
+
+  /* ---------- Состав ---------- */
+
+  .parts{list-style:none;margin:0;padding:0}
+
+  .parts li{
+    display:grid;
+    grid-template-columns:14px 1fr;
+    gap:20px;
+    padding:22px 0;
+    border-top:1px solid var(--line);
+  }
+
+  .parts li:last-child{border-bottom:1px solid var(--line)}
+
+  .dot{
+    width:14px;height:14px;
+    border-radius:50%;
+    margin-top:9px;
+  }
+
+  .parts h3{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40;
+    font-weight:500;
+    font-size:21px;
+    margin:0 0 4px;
+    letter-spacing:-.01em;
+  }
+
+  .parts p{margin:0;max-width:56ch;color:var(--ink-soft)}
+
+  /* ---------- Заваривание ---------- */
+
+  .brew{
+    background:var(--paper-warm);
+    border-radius:6px;
+    padding:38px 34px;
+  }
+
+  .for{
+    font-size:15px;
+    color:var(--ink-soft);
+    margin:0 0 20px;
+  }
+
+  .specs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:34px 56px;
+    margin:0;
+    padding:0;
+  }
+
+  .specs div{min-width:120px}
+
+  .specs dt{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-bottom:2px;
+  }
+
+  .specs dd{
+    margin:0;
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40;
+    font-weight:500;
+    font-size:clamp(2rem,6vw,2.8rem);
+    line-height:1.05;
+    letter-spacing:-.02em;
+    color:var(--hibiscus);
+  }
+
+  .specs dd small{
+    font-family:"Karla",sans-serif;
+    font-weight:400;
+    font-size:16px;
+    letter-spacing:0;
+    color:var(--ink-soft);
+    margin-left:4px;
+  }
+
+  .start{
+    margin:32px 0 0;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+    font-size:18px;
+  }
+
+  .start b{font-weight:600}
+
+  .why{
+    margin:20px 0 0;
+    max-width:58ch;
+    color:var(--ink-soft);
+    font-size:16px;
+  }
+
+  /* ---------- Холодный ---------- */
+
+  .cold .brew{
+    background:#EFF1EC;
+  }
+
+  .cold .specs dd{color:var(--aronia)}
+
+  /* ---------- Подвал ---------- */
+
+  footer{
+    padding:44px 0 72px;
+    color:var(--ink-soft);
+    font-size:15px;
+  }
+
+  footer p{margin:0;max-width:56ch}
+
+  a{color:var(--hibiscus)}
+  a:focus-visible,
+  :focus-visible{outline:2px solid var(--hibiscus);outline-offset:3px}
+
+  @media (max-width:560px){
+    .hero{padding:48px 0 28px}
+    .brew{padding:28px 22px}
+    .specs{gap:26px 36px}
+    .band{height:56px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .band span{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Ягодный чай на каждый день</p>
+    <h1>Земляника</h1>
+    <p class="lede">Земляника, гибискус, арония и яблоко. Состав, который пьётся просто как ягодный чай — без оговорок и ограничений по частоте.</p>
+    <p class="lede">По безопасности для регулярного употребления он выглядит проще предыдущих вариантов.</p>
+
+    <div class="band" role="img" aria-label="Полоса цветов: ягоды земляники, гибискус, листья земляники, арония, зелёное яблоко">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <p class="band-note">Ширина полос — примерная роль каждого компонента во вкусе.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Что даёт каждый компонент</h2>
+    <ul class="parts">
+      <li>
+        <span class="dot" style="background:var(--strawberry)"></span>
+        <div>
+          <h3>Ягоды земляники</h3>
+          <p>Полифенолы, антоцианы и органические кислоты. В основном дают аромат и ягодный вкус.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--hibiscus)"></span>
+        <div>
+          <h3>Цветы гибискуса</h3>
+          <p>Антоцианы и органические кислоты. Именно гибискус даёт кислинку, красный цвет и большую часть характерного вкуса.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--leaf)"></span>
+        <div>
+          <h3>Листья земляники</h3>
+          <p>Полифенолы и дубильные вещества, добавляют травяную составляющую.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--aronia)"></span>
+        <div>
+          <h3>Арония</h3>
+          <p>Очень богата антоцианами и другими полифенолами; один из наиболее «концентрированных» компонентов смеси.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--apple)"></span>
+        <div>
+          <h3>Зелёное яблоко</h3>
+          <p>Органические кислоты и полифенолы, делает вкус более фруктовым и сбалансированным.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section>
+  <div class="wrap">
+    <h2>Как заваривать горячим</h2>
+    <div class="brew">
+      <p class="for">На 500 мл</p>
+      <dl class="specs">
+        <div>
+          <dt>Смеси</dt>
+          <dd>7–9<small>г</small></dd>
+        </div>
+        <div>
+          <dt>Вода</dt>
+          <dd>90–95<small>°C</small></dd>
+        </div>
+        <div>
+          <dt>Под крышкой</dt>
+          <dd>8–10<small>мин</small></dd>
+        </div>
+      </dl>
+      <p class="start">Я бы начал с <b>8 г на 500 мл и 10 минут</b> — и дальше подстраивал под себя.</p>
+      <p class="why">Гибискус очень быстро отдаёт кислоту и цвет, поэтому держать 20–30 минут нет смысла: напиток станет чрезмерно кислым и терпким.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cold">
+  <div class="wrap">
+    <h2>Холодное настаивание</h2>
+    <div class="brew">
+      <p class="for">На 500 мл холодной воды</p>
+      <dl class="specs">
+        <div>
+          <dt>Смеси</dt>
+          <dd>8–10<small>г</small></dd>
+        </div>
+        <div>
+          <dt>В холодильнике</dt>
+          <dd>6–10<small>ч</small></dd>
+        </div>
+      </dl>
+      <p class="start">Получится что-то между холодным чаем и несладким ягодным морсом.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Смесь хорошо переносит холодное настаивание, так что одну порцию можно поставить в холодильник с вечера, а вторую заварить горячей утром.</p>
+  </div>
+</footer>
+
+</body>
+</html>
