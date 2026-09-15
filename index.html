@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ягодные чаи — каталог смесей</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF6F0;
+    --ink:#241D1A;
+    --ink-soft:#6B6058;
+    --line:#E3DAD0;
+  }
+
+  *{box-sizing:border-box}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Karla",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:960px;margin:0 auto;padding:0 28px}
+
+  /* ---------- Hero ---------- */
+
+  .hero{padding:80px 0 56px}
+
+  .kicker{font-size:15px;color:var(--ink-soft);margin:0 0 18px}
+
+  h1{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40,"WONK" 1;
+    font-weight:500;
+    font-size:clamp(2.8rem,8vw,4.6rem);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    margin:0;
+  }
+
+  .lede{
+    max-width:56ch;
+    font-size:19px;
+    color:var(--ink-soft);
+    margin:22px 0 0;
+  }
+
+  /* ---------- Полоса-образец всех оттенков ---------- */
+
+  .swatch{
+    display:flex;
+    height:14px;
+    margin:44px 0 0;
+    border-radius:3px;
+    overflow:hidden;
+  }
+  .swatch span{flex:1}
+
+  /* ---------- Сетка карточек ---------- */
+
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+    margin:56px 0 80px;
+  }
+
+  .card{
+    background:var(--paper);
+    padding:34px 32px;
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    position:relative;
+    transition:background-color .15s ease;
+  }
+
+  .card:hover{background:#F3ECE2}
+
+  .card:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+
+  .dot{
+    width:11px;height:11px;
+    border-radius:50%;
+    margin-bottom:16px;
+  }
+
+  .card h2{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40;
+    font-weight:500;
+    font-size:26px;
+    letter-spacing:-.01em;
+    margin:0 0 10px;
+  }
+
+  .card p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:15.5px;
+    max-width:34ch;
+  }
+
+  .card .tag{
+    display:inline-block;
+    margin-top:16px;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+
+  .card .warn{color:#8B2E24}
+
+  footer{
+    padding:0 0 72px;
+    color:var(--ink-soft);
+    font-size:15px;
+  }
+  footer p{margin:0;max-width:60ch}
+
+  @media (max-width:640px){
+    .grid{grid-template-columns:1fr}
+    .hero{padding:56px 0 40px}
+    .card{padding:28px 24px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Восемь ягодных смесей</p>
+    <h1>Ягодные чаи без чайного листа</h1>
+    <p class="lede">Каждая смесь собрана вокруг одной-двух главных ягод и держится на похожем принципе: ягода задаёт вкус, арония или шиповник — терпкость и полифенолы, а яблоко всё это смягчает.</p>
+
+    <div class="swatch" aria-hidden="true">
+      <span style="background:#C0243F"></span>
+      <span style="background:#B12550"></span>
+      <span style="background:#C2451F"></span>
+      <span style="background:#A31E2E"></span>
+      <span style="background:#8E1030"></span>
+      <span style="background:#3C2361"></span>
+      <span style="background:#2E1533"></span>
+      <span style="background:#C97D1A"></span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+
+    <a class="card" href="zemlyanika.html">
+      <span class="dot" style="background:#C0243F"></span>
+      <h2>Земляника</h2>
+      <p>Земляника, гибискус, арония и яблоко. Повседневный ягодный чай, самый простой из всех по безопасности для регулярного питья.</p>
+      <span class="tag">Ежедневный</span>
+    </a>
+
+    <a class="card" href="malina.html">
+      <span class="dot" style="background:#B12550"></span>
+      <h2>Малина</h2>
+      <p>Малина, лист малины, боярышник и арония. Мягче и менее кислая — без гибискуса, шиповника и клюквы.</p>
+      <span class="tag warn">С оговоркой: боярышник</span>
+    </a>
+
+    <a class="card" href="oblepikha.html">
+      <span class="dot" style="background:#C2451F"></span>
+      <h2>Облепиха</h2>
+      <p>Облепиха, шиповник, чага, зверобой и кипрей. Более травяная смесь с витаминно-кислой ягодной частью.</p>
+      <span class="tag warn">Не для ежедневного: зверобой</span>
+    </a>
+
+    <a class="card" href="brusnika.html">
+      <span class="dot" style="background:#A31E2E"></span>
+      <h2>Брусника</h2>
+      <p>Брусника, шиповник, арония, яблоко, красная рябина и чабрец. Удачная кисло-ягодная смесь без кофеина.</p>
+      <span class="tag">Ежедневный</span>
+    </a>
+
+    <a class="card" href="klyukva.html">
+      <span class="dot" style="background:#8E1030"></span>
+      <h2>Клюква</h2>
+      <p>Клюква, шиповник, красная рябина, арония, яблоко и чабрец. Яркий ягодный напиток с лёгкой пряностью.</p>
+      <span class="tag">Хорош холодным</span>
+    </a>
+
+    <a class="card" href="chernika.html">
+      <span class="dot" style="background:#3C2361"></span>
+      <h2>Черника</h2>
+      <p>Черника, боярышник, гибискус, арония и яблоко. Тёмный, кисловатый настой с выраженной терпкостью.</p>
+      <span class="tag warn">С оговоркой: боярышник, гибискус</span>
+    </a>
+
+    <a class="card" href="smorodina.html">
+      <span class="dot" style="background:#2E1533"></span>
+      <h2>Смородина</h2>
+      <p>Чёрная смородина, шиповник, арония, яблоко, рябина обыкновенная и чабрец. Ягодный, кислый и ароматный.</p>
+      <span class="tag">Ежедневный</span>
+    </a>
+
+    <a class="card" href="moroshka.html">
+      <span class="dot" style="background:#C97D1A"></span>
+      <h2>Морошка</h2>
+      <p>Морошка, шиповник, чага, лист земляники, арония и яблоко. Ягодно-травяная смесь для вкуса и рациона, а не лечебный сбор.</p>
+      <span class="tag">Долгий настой</span>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Все смеси без кофеина. У трёх есть отдельная оговорка — боярышник, гибискус или зверобой — она указана на карточке и подробно разобрана на странице смеси.</p>
+  </div>
+</footer>
+
+</body>
+</html>
