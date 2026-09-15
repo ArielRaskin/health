@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Облепиха — травяной чай</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FDF7EF;
+    --paper-warm:#F5E9D9;
+    --ink:#2C2318;
+    --ink-soft:#6A5A46;
+    --seabuck:#DE8A1B;
+    --rosehip:#C2451F;
+    --apple:#8C9E44;
+    --chaga:#4A3524;
+    --wort:#D8B22A;
+    --fireweed:#8A5D86;
+    --line:#E5D8C4;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Karla",system-ui,sans-serif;
+    font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 28px}
+
+  .hero{padding:72px 0 40px}
+  .kicker{font-size:15px;color:var(--ink-soft);margin:0 0 18px}
+
+  h1{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40,"WONK" 1;
+    font-weight:500;
+    font-size:clamp(3rem,11vw,6.6rem);
+    line-height:.92;letter-spacing:-.03em;
+    margin:0;color:var(--rosehip);
+  }
+
+  .lede{max-width:52ch;font-size:19px;margin:26px 0 0}
+  .lede + .lede{margin-top:12px;color:var(--ink-soft);font-size:17px}
+
+  .band{display:flex;height:76px;margin:48px 0 10px;border-radius:4px;overflow:hidden}
+  .band span{display:block;transform-origin:left center;animation:grow .9s cubic-bezier(.2,.7,.3,1) both}
+  .band span:nth-child(1){background:var(--seabuck);flex:2.8;animation-delay:.05s}
+  .band span:nth-child(2){background:var(--rosehip);flex:2.2;animation-delay:.11s}
+  .band span:nth-child(3){background:var(--apple);flex:1.2;animation-delay:.17s}
+  .band span:nth-child(4){background:var(--chaga);flex:1.6;animation-delay:.23s}
+  .band span:nth-child(5){background:var(--wort);flex:1.4;animation-delay:.29s}
+  .band span:nth-child(6){background:var(--fireweed);flex:1.8;animation-delay:.35s}
+
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+  .band-note{font-size:14px;color:var(--ink-soft);margin:0 0 4px}
+
+  section{padding:56px 0}
+
+  h2{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40;
+    font-weight:500;
+    font-size:clamp(1.9rem,4.5vw,2.6rem);
+    line-height:1.1;letter-spacing:-.02em;margin:0 0 28px;
+  }
+
+  .rule{height:1px;background:var(--line);border:0;margin:0}
+
+  .parts{list-style:none;margin:0;padding:0}
+  .parts li{display:grid;grid-template-columns:14px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
+  .parts li:last-child{border-bottom:1px solid var(--line)}
+  .dot{width:14px;height:14px;border-radius:50%;margin-top:9px}
+  .parts h3{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40;
+    font-weight:500;font-size:21px;margin:0 0 4px;letter-spacing:-.01em;
+  }
+  .parts p{margin:0;max-width:56ch;color:var(--ink-soft)}
+
+  /* ---------- Зверобой ---------- */
+
+  .warning{background:var(--chaga);color:#F7EEE2;padding:52px 0 56px}
+  .warning h2{color:var(--wort);margin-bottom:22px}
+  .warning p{max-width:60ch;margin:0 0 18px;color:#E8DCCB}
+  .warning p:last-child{margin-bottom:0}
+  .warning .strong{font-size:19px;color:#F7EEE2}
+  .warning ul{margin:0 0 18px;padding-left:20px;max-width:60ch;color:#E8DCCB}
+  .warning li{margin-bottom:4px}
+
+  /* ---------- Заваривание ---------- */
+
+  .brew{background:var(--paper-warm);border-radius:6px;padding:38px 34px}
+  .for{font-size:15px;color:var(--ink-soft);margin:0 0 20px}
+
+  .specs{display:flex;flex-wrap:wrap;gap:34px 56px;margin:0;padding:0}
+  .specs div{min-width:120px}
+  .specs dt{font-size:14px;color:var(--ink-soft);margin-bottom:2px}
+  .specs dd{
+    margin:0;
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40;
+    font-weight:500;
+    font-size:clamp(2rem,6vw,2.8rem);
+    line-height:1.05;letter-spacing:-.02em;
+    color:var(--rosehip);
+  }
+  .specs dd small{
+    font-family:"Karla",sans-serif;font-weight:400;font-size:16px;
+    letter-spacing:0;color:var(--ink-soft);margin-left:4px;
+  }
+
+  .start{margin:32px 0 0;padding-top:22px;border-top:1px solid var(--line);font-size:18px}
+  .start b{font-weight:600}
+  .why{margin:16px 0 0;max-width:58ch;color:var(--ink-soft);font-size:16px}
+
+  footer{padding:44px 0 72px;color:var(--ink-soft);font-size:15px}
+  footer p{margin:0;max-width:56ch}
+
+  :focus-visible{outline:2px solid var(--rosehip);outline-offset:3px}
+
+  @media (max-width:560px){
+    .hero{padding:48px 0 28px}
+    .brew{padding:28px 22px}
+    .specs{gap:26px 36px}
+    .band{height:56px}
+    .warning{padding:40px 0 44px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .band span{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Травяная смесь с ягодной кислинкой</p>
+    <h1>Облепиха</h1>
+    <p class="lede">Облепиха, шиповник, чага, зверобой и кипрей. Более «травяная» смесь, чем предыдущие, с выраженной витаминно-кислой ягодной частью.</p>
+    <p class="lede">И с одним компонентом, из-за которого это не совсем обычный чай.</p>
+
+    <div class="band" role="img" aria-label="Полоса цветов: облепиха, шиповник, зелёное яблоко, чага, зверобой, кипрей">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <p class="band-note">Ширина полос — примерная роль каждого компонента во вкусе.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Что даёт каждый компонент</h2>
+    <ul class="parts">
+      <li>
+        <span class="dot" style="background:var(--seabuck)"></span>
+        <div>
+          <h3>Облепиха</h3>
+          <p>Каротиноиды, витамин Е, полифенолы и органические кислоты. Хороший источник растительных антиоксидантов.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--rosehip)"></span>
+        <div>
+          <h3>Шиповник майский</h3>
+          <p>Витамин C, каротиноиды и полифенолы.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--apple)"></span>
+        <div>
+          <h3>Зелёное яблоко</h3>
+          <p>Органические кислоты и полифенолы; делает вкус мягче.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--chaga)"></span>
+        <div>
+          <h3>Чага</h3>
+          <p>Содержит полифенолы и меланиноподобные соединения. Антиоксидантная активность интересна, но убедительных клинических доказательств лечебного действия чаги пока недостаточно.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--wort)"></span>
+        <div>
+          <h3>Зверобой</h3>
+          <p>Содержит гиперицин и гиперфорин и обладает фармакологически активными свойствами. Это главный нюанс этой смеси.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--fireweed)"></span>
+        <div>
+          <h3>Кипрей (иван-чай)</h3>
+          <p>Полифенолы, дубильные вещества; обычно используется как мягкая безкофеиновая альтернатива чаю.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="warning">
+  <div class="wrap">
+    <h2>Зверобой — важное предупреждение</h2>
+    <p class="strong">В отличие от большинства ягодных смесей, эту я не стал бы рекомендовать как бесконтрольный ежедневный напиток.</p>
+    <p>Зверобой способен взаимодействовать с большим количеством лекарств, поскольку влияет на ферменты и транспортёры, участвующие в метаболизме препаратов. Особенно важны:</p>
+    <ul>
+      <li>некоторые антидепрессанты</li>
+      <li>антикоагулянты</li>
+      <li>противозачаточные</li>
+      <li>препараты от эпилепсии</li>
+      <li>некоторые сердечные препараты</li>
+      <li>иммунодепрессанты</li>
+    </ul>
+    <p>Также зверобой может повышать чувствительность кожи к солнечному свету.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Как заваривать</h2>
+    <div class="brew">
+      <p class="for">Умеренный настой, на 500 мл</p>
+      <dl class="specs">
+        <div><dt>Смеси</dt><dd>7–8<small>г</small></dd></div>
+        <div><dt>Вода</dt><dd>90–95<small>°C</small></dd></div>
+        <div><dt>Под крышкой</dt><dd>8–10<small>мин</small></dd></div>
+      </dl>
+      <p class="start">Если пьёшь именно ради вкуса, хватит <b>6–7 г на 500 мл и 8 минут</b>.</p>
+      <p class="why">Не нужно делать очень концентрированный настой и тем более кипятить его.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<footer>
+  <div class="wrap">
+    <p>Это скорее смесь для случая, чем для каждого дня: вкус у неё интересный, но зверобой задаёт свои правила.</p>
+  </div>
+</footer>
+
+</body>
+</html>
