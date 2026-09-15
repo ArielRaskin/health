@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Малина — ягодный чай</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF5F6;
+    --paper-warm:#F3E7EA;
+    --ink:#2E1F2A;
+    --ink-soft:#66545F;
+    --raspberry:#B12550;
+    --berry:#D4577C;
+    --leaf:#5E7A50;
+    --hawthorn:#9E3327;
+    --aronia:#4B2246;
+    --apple:#8C9E44;
+    --line:#E2D2D6;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Karla",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 28px}
+
+  /* ---------- Hero ---------- */
+
+  .hero{padding:72px 0 40px}
+
+  .kicker{font-size:15px;color:var(--ink-soft);margin:0 0 18px}
+
+  h1{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40,"WONK" 1;
+    font-weight:500;
+    font-size:clamp(3.6rem,13vw,7.5rem);
+    line-height:.92;
+    letter-spacing:-.03em;
+    margin:0;
+    color:var(--raspberry);
+  }
+
+  .lede{max-width:52ch;font-size:19px;margin:26px 0 0}
+  .lede + .lede{margin-top:12px;color:var(--ink-soft);font-size:17px}
+
+  .band{
+    display:flex;height:76px;margin:48px 0 10px;
+    border-radius:4px;overflow:hidden;
+  }
+  .band span{display:block;transform-origin:left center;animation:grow .9s cubic-bezier(.2,.7,.3,1) both}
+  .band span:nth-child(1){background:var(--berry);flex:3.2;animation-delay:.05s}
+  .band span:nth-child(2){background:var(--leaf);flex:1.8;animation-delay:.12s}
+  .band span:nth-child(3){background:var(--hawthorn);flex:2.2;animation-delay:.19s}
+  .band span:nth-child(4){background:var(--aronia);flex:2;animation-delay:.26s}
+  .band span:nth-child(5){background:var(--apple);flex:1.4;animation-delay:.33s}
+
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+  .band-note{font-size:14px;color:var(--ink-soft);margin:0 0 4px}
+
+  /* ---------- Секции ---------- */
+
+  section{padding:56px 0}
+
+  h2{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40;
+    font-weight:500;
+    font-size:clamp(1.9rem,4.5vw,2.6rem);
+    line-height:1.1;
+    letter-spacing:-.02em;
+    margin:0 0 28px;
+  }
+
+  .rule{height:1px;background:var(--line);border:0;margin:0}
+
+  /* ---------- Состав ---------- */
+
+  .parts{list-style:none;margin:0;padding:0}
+  .parts li{
+    display:grid;grid-template-columns:14px 1fr;gap:20px;
+    padding:22px 0;border-top:1px solid var(--line);
+  }
+  .parts li:last-child{border-bottom:1px solid var(--line)}
+  .dot{width:14px;height:14px;border-radius:50%;margin-top:9px}
+  .parts h3{
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40;
+    font-weight:500;font-size:21px;margin:0 0 4px;letter-spacing:-.01em;
+  }
+  .parts p{margin:0;max-width:56ch;color:var(--ink-soft)}
+
+  /* ---------- Боярышник ---------- */
+
+  .note{
+    border-left:3px solid var(--hawthorn);
+    padding:4px 0 4px 26px;
+  }
+  .note h2{margin-bottom:20px;color:var(--hawthorn)}
+  .note p{max-width:60ch;margin:0 0 16px}
+  .note p:last-child{margin-bottom:0}
+  .note .strong{font-size:18px}
+
+  /* ---------- Заваривание ---------- */
+
+  .brew{background:var(--paper-warm);border-radius:6px;padding:38px 34px}
+  .for{font-size:15px;color:var(--ink-soft);margin:0 0 20px}
+
+  .specs{display:flex;flex-wrap:wrap;gap:34px 56px;margin:0;padding:0}
+  .specs div{min-width:120px}
+  .specs dt{font-size:14px;color:var(--ink-soft);margin-bottom:2px}
+  .specs dd{
+    margin:0;
+    font-family:"Fraunces",Georgia,serif;
+    font-variation-settings:"SOFT" 40;
+    font-weight:500;
+    font-size:clamp(2rem,6vw,2.8rem);
+    line-height:1.05;letter-spacing:-.02em;
+    color:var(--raspberry);
+  }
+  .specs dd small{
+    font-family:"Karla",sans-serif;font-weight:400;font-size:16px;
+    letter-spacing:0;color:var(--ink-soft);margin-left:4px;
+  }
+
+  .start{margin:32px 0 0;padding-top:22px;border-top:1px solid var(--line);font-size:18px}
+  .start b{font-weight:600}
+  .why{margin:16px 0 0;max-width:58ch;color:var(--ink-soft);font-size:16px}
+
+  .cold .brew{background:#EAEFEC}
+  .cold .specs dd{color:var(--aronia)}
+
+  footer{padding:44px 0 72px;color:var(--ink-soft);font-size:15px}
+  footer p{margin:0;max-width:56ch}
+
+  :focus-visible{outline:2px solid var(--raspberry);outline-offset:3px}
+
+  @media (max-width:560px){
+    .hero{padding:48px 0 28px}
+    .brew{padding:28px 22px}
+    .specs{gap:26px 36px}
+    .band{height:56px}
+    .note{padding-left:18px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .band span{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Ягодный чай без кофеина</p>
+    <h1>Малина</h1>
+    <p class="lede">Малина, листья малины, боярышник и арония. Мягче и менее кислая, чем предыдущие смеси — здесь нет ни гибискуса, ни шиповника, ни клюквы.</p>
+    <p class="lede">Вкус держится на ягодах и травяной терпкости листа, а не на кислоте.</p>
+
+    <div class="band" role="img" aria-label="Полоса цветов: ягоды малины, листья малины, боярышник, арония, зелёное яблоко">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <p class="band-note">Ширина полос — примерная роль каждого компонента во вкусе.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Что даёт каждый компонент</h2>
+    <ul class="parts">
+      <li>
+        <span class="dot" style="background:var(--berry)"></span>
+        <div>
+          <h3>Ягоды малины</h3>
+          <p>Витамин C в небольшом количестве, антоцианы, эллаговая кислота и другие полифенолы. Хороший ягодный компонент.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--leaf)"></span>
+        <div>
+          <h3>Листья малины</h3>
+          <p>Полифенолы и дубильные вещества. Придают настою травянистый, немного терпкий вкус.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--hawthorn)"></span>
+        <div>
+          <h3>Плоды боярышника</h3>
+          <p>Флавоноиды и проантоцианидины. Традиционно используется для поддержки сердечно-сосудистой системы.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--aronia)"></span>
+        <div>
+          <h3>Арония</h3>
+          <p>Очень богатый источник антоцианов и полифенолов; именно она значительно усиливает антиоксидантную составляющую.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" style="background:var(--apple)"></span>
+        <div>
+          <h3>Зелёное яблоко</h3>
+          <p>Органические кислоты и полифенолы, балансирует вкус.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section>
+  <div class="wrap">
+    <div class="note">
+      <h2>Главная особенность — боярышник</h2>
+      <p class="strong">Из всех перечисленных смесей здесь один из наиболее выраженных акцентов на сердечно-сосудистую систему.</p>
+      <p>Важная оговорка: боярышник может влиять на давление и сердечный ритм, а также взаимодействовать с некоторыми сердечно-сосудистыми препаратами. Если человек принимает лекарства от давления, стенокардии, сердечной недостаточности или нарушения ритма, такой чай лучше не пить регулярно без согласования с врачом.</p>
+      <p>Если лекарств нет, обычный некрепкий чай из пищевой смеси — совсем другая ситуация. Но очень концентрированным я бы его всё равно не делал.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section>
+  <div class="wrap">
+    <h2>Как заваривать горячим</h2>
+    <div class="brew">
+      <p class="for">На 500 мл</p>
+      <dl class="specs">
+        <div><dt>Смеси</dt><dd>7–9<small>г</small></dd></div>
+        <div><dt>Вода</dt><dd>90–95<small>°C</small></dd></div>
+        <div><dt>Под крышкой</dt><dd>10–12<small>мин</small></dd></div>
+      </dl>
+      <p class="start">Я бы начал с <b>8 г на 500 мл и 10 минут</b>.</p>
+      <p class="why">Если хочется более насыщенного ягодного вкуса — 9–10 г и 12–15 минут.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cold">
+  <div class="wrap">
+    <h2>Можно и холодным</h2>
+    <div class="brew">
+      <p class="for">На 500 мл холодной воды</p>
+      <dl class="specs">
+        <div><dt>Смеси</dt><dd>8<small>г</small></dd></div>
+        <div><dt>В холодильнике</dt><dd>6–10<small>ч</small></dd></div>
+      </dl>
+      <p class="start">Получится мягкий малиново-ягодный напиток без кофеина.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Без кофеина — значит, подходит и на вечер. Главное не уводить настой в сторону крепкого: здесь это вопрос не только вкуса.</p>
+  </div>
+</footer>
+
+</body>
+</html>
